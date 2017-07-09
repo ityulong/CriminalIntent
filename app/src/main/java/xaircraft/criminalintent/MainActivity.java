@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 public class MainActivity extends Activity {
     private int i = 0;
+    private int b = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
