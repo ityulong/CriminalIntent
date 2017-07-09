@@ -8,6 +8,8 @@ import android.os.Bundle;
 public class MainActivity extends Activity {
     int a = 0;
     int b = 1;
+    int c = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
