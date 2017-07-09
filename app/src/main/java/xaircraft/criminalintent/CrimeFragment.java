@@ -20,6 +20,7 @@ import xaircraft.criminalintent.model.Crime;
 public class CrimeFragment extends Fragment {
     private EditText mTitle;
     private Crime mCrime;
+    private int number;
 
     public CrimeFragment() {
         // Required empty public constructor
