@@ -26,4 +26,13 @@ public class Crime {
         return mId;
     }
 
+    private static Crime mCrime = null;
+    public static Crime getInstance() {
+        synchronized (Crime.class) {
+            if (mCrime == null) {
+                mCrime = new Crime();
+            }
+        }
+        return mCrime;
+    }
 }

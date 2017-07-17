@@ -54,5 +54,4 @@ public class CrimeFragment extends Fragment {
         });
         return v;
     }
-
 }

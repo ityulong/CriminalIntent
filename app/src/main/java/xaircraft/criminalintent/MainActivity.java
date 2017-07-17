@@ -4,12 +4,12 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
+import android.view.View;
 
 public class MainActivity extends Activity {
     int a = 0;
     int b = 1;
     int c = 1;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,5 +23,7 @@ public class MainActivity extends Activity {
                     .add(R.id.ly_container, fg)
                     .commit();
         }
+        View gfg = findViewById(R.id.ly_container);
+        
     }
 }
