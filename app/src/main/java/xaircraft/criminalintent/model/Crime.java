@@ -1,5 +1,7 @@
 package xaircraft.criminalintent.model;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.UUID;
 
 /**
@@ -9,9 +11,13 @@ import java.util.UUID;
 public class Crime {
     private String mTitle;
     private UUID mId;
+    private boolean sSolved;
+    private String mDate;
 
     public Crime() {
         mId = UUID.randomUUID();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy年MM月dd日 HH时mm分ss秒 E");
+        mDate = dateFormat.format(new Date());
     }
 
     public String getTitle() {
@@ -34,5 +40,21 @@ public class Crime {
             }
         }
         return mCrime;
+    }
+
+    public boolean issSolved() {
+        return sSolved;
+    }
+
+    public void setsSolved(boolean sSolved) {
+        this.sSolved = sSolved;
+    }
+
+    public String getDate() {
+        return mDate;
+    }
+
+    public void setDate(String date) {
+        mDate = date;
     }
 }
