@@ -1,5 +1,6 @@
 package xaircraft.criminalintent;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ListFragment;
@@ -19,6 +20,8 @@ import xaircraft.criminalintent.model.CrimeLab;
 
 public class CrimeListFragment extends ListFragment {
     private ArrayList<Crime> mCrimes;
+
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,8 +31,17 @@ public class CrimeListFragment extends ListFragment {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        ((CrimeAdapter)getListAdapter()).notifyDataSetChanged();
+    }
+
+    @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         Crime crime = (Crime) getListAdapter().getItem(position);
+        Intent i = new Intent(getActivity(), CrimeActivity.class);
+        i.putExtra(CrimeFragment.EXTRA_CRIME_ID, crime.getId());
+        startActivity(i);
         Toast.makeText(getContext(), crime.getTitle(), Toast.LENGTH_SHORT).show();
     }
 }

@@ -3,6 +3,7 @@ package xaircraft.criminalintent.model;
 import android.content.Context;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 /**
  * Created by chenyulong on 2017/9/4.
@@ -31,7 +32,7 @@ public class CrimeLab {
         return sCrimeLab;
     }
 
-    public Crime getCrime(String uuid){
+    public Crime getCrime(UUID uuid){
         for (Crime c : mCrimes) {
             if(c.getId().equals(uuid)){
                 return c;
