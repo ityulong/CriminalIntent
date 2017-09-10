@@ -36,7 +36,7 @@ public class CrimeAdapter extends ArrayAdapter<Crime> {
         TextView tvDate = (TextView) convertView.findViewById(R.id.tv_crime_date);
         CheckBox cbSloved = (CheckBox) convertView.findViewById(R.id.cb_crime_item_solved);
         tvTitle.setText(crime.getTitle());
-        tvDate.setText(crime.getDate());
+        tvDate.setText(crime.getDate().toString());
         cbSloved.setChecked(crime.issSolved());
 
         return convertView;
